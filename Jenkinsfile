@@ -11,25 +11,51 @@ pipeline {
          }
 
     stages {
-        stage('Build') {
+        stage('add') {
             steps {
                 echo 'Building..'
                 sh """ 
-                chmod +x ./calculator.sh
+                chmod +x ./calC.sh
 
 
-                ./calculator.sh "${Number1}" "${Number2}" "${Operation}"
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
                 """
             }
         }
-        stage('Test') {
+
+         stage('sub') {
             steps {
-                echo 'Testing..'
+                echo 'Building..'
+                sh """ 
+                chmod +x ./calC.sh
+
+
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
+                """
+            }
+        } stage('multi') {
+            steps {
+                echo 'Building..'
+                sh """ 
+                chmod +x ./calC.sh
+
+
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
+                """
+            }
+        } stage('div') {
+            steps {
+                echo 'Building..'
+                sh """ 
+                chmod +x ./calC.sh
+
+
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
+                """
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying.....'
+
+        
             }
         }
     }
