@@ -21,8 +21,6 @@ pipeline {
                 echo 'adding..'
                 sh """ 
                 chmod +x ./calC.sh
-
-
                 ./calC.sh "${Number1}" "${Number2}" "${Operation}"
                 """
             }
@@ -37,8 +35,6 @@ pipeline {
                 echo 'subtracting..'
                 sh """ 
                 chmod +x ./calC.sh
-
-
                 ./calC.sh "${Number1}" "${Number2}" "${Operation}"
                 """
             }
@@ -53,8 +49,6 @@ pipeline {
                 echo 'multiplying..'
                 sh """ 
                 chmod +x ./calC.sh
-
-
                 ./calC.sh "${Number1}" "${Number2}" "${Operation}"
                 """
             }
@@ -69,8 +63,6 @@ pipeline {
                 echo 'dividing..'
                 sh """ 
                 chmod +x ./calC.sh
-
-
                 ./calC.sh "${Number1}" "${Number2}" "${Operation}"
                 """
             }
