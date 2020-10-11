@@ -12,8 +12,13 @@ pipeline {
 
     stages {
         stage('add') {
+             when {
+                    expression {
+                        "${Operation}" == 'add'
+                    }
+                }
             steps {
-                echo 'Building..'
+                echo 'adding..'
                 sh """ 
                 chmod +x ./calC.sh
 
@@ -23,8 +28,13 @@ pipeline {
             }
         }
         stage('sub') {
+             when {
+                    expression {
+                        "${Operation}" == 'sub'
+                    }
+                }
             steps {
-                echo 'Building..'
+                echo 'subtracting..'
                 sh """ 
                 chmod +x ./calC.sh
 
@@ -34,8 +44,13 @@ pipeline {
             }
         } 
         stage('multi') {
+             when {
+                    expression {
+                        "${Operation}" == 'add'
+                    }
+                }
             steps {
-                echo 'Building..'
+                echo 'multiplying..'
                 sh """ 
                 chmod +x ./calC.sh
 
@@ -45,8 +60,13 @@ pipeline {
             }
         }
         stage('div') {
+             when {
+                    expression {
+                        "${Operation}" == 'add'
+                    }
+                }
             steps {
-                echo 'Building..'
+                echo 'dividing..'
                 sh """ 
                 chmod +x ./calC.sh
 
