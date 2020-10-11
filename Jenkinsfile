@@ -46,7 +46,7 @@ pipeline {
         stage('multi') {
              when {
                     expression {
-                        "${Operation}" == 'add'
+                        "${Operation}" == 'multi'
                     }
                 }
             steps {
@@ -62,7 +62,7 @@ pipeline {
         stage('div') {
              when {
                     expression {
-                        "${Operation}" == 'add'
+                        "${Operation}" == 'div'
                     }
                 }
             steps {
