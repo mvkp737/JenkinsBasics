@@ -25,16 +25,34 @@ pipeline {
         stage('sub') {
             steps {
                 echo 'Building..'
+                sh """ 
+                chmod +x ./calC.sh
+
+
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
+                """
             }
         } 
         stage('multi') {
             steps {
                 echo 'Building..'
+                sh """ 
+                chmod +x ./calC.sh
+
+
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
+                """
             }
         }
         stage('div') {
             steps {
                 echo 'Building..'
+                sh """ 
+                chmod +x ./calC.sh
+
+
+                ./calC.sh "${Number1}" "${Number2}" "${Operation}"
+                """
             }
         }
     }//stages
