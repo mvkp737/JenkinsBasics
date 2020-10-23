@@ -1,0 +1,42 @@
+pipeline {
+		agent any
+
+		parameters {
+			string(name:'aValue' ,defaultValue:'0' ,description:'prudhvi sagar this is value a')
+			string(name:'bValue' ,defaultValue:'0' ,description:'prudhvi sagar this is value b')
+		}
+
+		stages{
+			stage('stage1'){
+				steps {
+					echo "Echo from steps in stage1"
+					script{
+						echo "Echo from script in stage1"
+					}
+
+				}
+			}
+			stage('stage2'){
+				steps {
+					sh """"
+						ls
+						echo "This is from stage2 shell echo"
+					"""
+				}
+
+			}
+			stage('Run (a+b)^2'){
+				steps {
+					sh """
+						chmod +x ./a+b.sh
+						./a+b.sh "${aValue}" "${bValue}"
+					"""
+					// script {
+					// 	sh """
+					// 		./a+b.sh 
+					// 	"""
+					// }
+				}//steps
+			}//Run (a+b)^2
+		}//Stages
+ }//Pipeline
